@@ -10,10 +10,14 @@ class RssEntity(
     var activated: Boolean
 ): BaseEntity() {
 
-    constructor(id: Long?, uri: String, activated: Boolean) : this(uri, activated) {
+    constructor(id: Long, uri: String, activated: Boolean) : this(uri, activated) {
         this.id = id
         this.uri = uri
         this.activated = activated
+    }
+
+    fun toDomain(): Rss {
+        return Rss(id, uri, activated)
     }
 
     companion object {
