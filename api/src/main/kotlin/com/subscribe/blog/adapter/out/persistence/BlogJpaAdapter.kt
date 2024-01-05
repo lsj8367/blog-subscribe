@@ -7,8 +7,9 @@ import org.springframework.stereotype.Repository
 @Repository
 class BlogJpaAdapter(
     private val blogJpaRepository: BlogJpaRepository
-): BlogRepository {
+) : BlogRepository {
     override fun save(blog: Blog): Blog {
-        return blogJpaRepository.save(blog.toEntity()).toDomain()
+        return blogJpaRepository.save(BlogEntity.toEntity(blog))
+            .toDomain()
     }
 }

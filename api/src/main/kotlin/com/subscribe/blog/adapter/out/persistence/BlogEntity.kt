@@ -1,5 +1,6 @@
 package com.subscribe.blog.adapter.out.persistence
 
+import com.subscribe.blog.application.domain.model.Blog
 import com.subscribe.common.core.BaseEntity
 import jakarta.persistence.Entity
 
@@ -17,4 +18,13 @@ class BlogEntity(
         this.uri = uri
     }
 
+    fun toDomain(): Blog {
+        return Blog(this.id, this.title, this.description, this.uri)
+    }
+
+    companion object {
+        fun toEntity(blog: Blog): BlogEntity {
+            return BlogEntity(blog.id, blog.title, blog.description, blog.uri)
+        }
+    }
 }
