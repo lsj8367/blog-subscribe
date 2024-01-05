@@ -1,4 +1,4 @@
-package com.subscribe.blog
+package com.subscribe
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
