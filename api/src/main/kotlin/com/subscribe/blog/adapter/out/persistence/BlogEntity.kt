@@ -1,6 +1,5 @@
 package com.subscribe.blog.adapter.out.persistence
 
-import com.subscribe.blog.application.domain.model.Blog
 import com.subscribe.common.core.BaseEntity
 import jakarta.persistence.Entity
 
@@ -17,12 +16,5 @@ class BlogEntity(
         this.description = description
         this.uri = uri
     }
-
-
-
-    fun convert(): Blog {
-        return Blog(id!!, title, description, uri, listOf())
-    }
-
 
 }

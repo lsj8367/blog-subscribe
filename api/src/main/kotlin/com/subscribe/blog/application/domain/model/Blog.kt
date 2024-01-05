@@ -4,6 +4,5 @@ data class Blog(
     val id: Long? = null,
     val title: String,
     val description: String,
-    val uri: String,
-    val categories: List<String>
+    val uri: String
 )

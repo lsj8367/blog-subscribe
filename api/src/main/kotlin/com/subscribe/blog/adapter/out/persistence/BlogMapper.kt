@@ -7,5 +7,5 @@ fun Blog.toEntity(): BlogEntity {
 }
 
 fun BlogEntity.toDomain(): Blog {
-    return Blog(this.id, this.title, this.description, this.uri, listOf())
+    return Blog(this.id, this.title, this.description, this.uri)
 }
