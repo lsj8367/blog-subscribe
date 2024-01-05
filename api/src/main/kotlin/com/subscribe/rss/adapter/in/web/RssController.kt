@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 import java.net.URI
 
 @RestController
-@RequestMapping("/v1/rss")
+@RequestMapping("/api/v1/rss")
 class RssController(
     private val rssUseCase: RssUseCase
 ) {
