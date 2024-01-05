@@ -18,4 +18,16 @@ class RssEntityTest {
         assertThat(rssEntity.uri).isEqualTo("https://github.com/lsj8367")
         assertThat(rssEntity.activated).isEqualTo(true)
     }
+
+    @Test
+    fun 엔티티_객체를_도메인으로_변환한다() {
+        //given
+        val rssEntity = RssEntity(1L, "https://github.com/lsj8367", true)
+
+        //when
+        val rss = rssEntity.toDomain()
+
+        //then
+        assertThat(rss).isEqualTo(Rss(1L, "https://github.com/lsj8367", true))
+    }
 }
