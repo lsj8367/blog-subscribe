@@ -11,7 +11,7 @@ class BlogEntity(
     var uri: String
 ) : BaseEntity() {
 
-    constructor(id: Long?, title: String, description: String, uri: String): this(title, description, uri) {
+    constructor(id: Long, title: String, description: String, uri: String): this(title, description, uri) {
         this.id = id
         this.title = title
         this.description = description
