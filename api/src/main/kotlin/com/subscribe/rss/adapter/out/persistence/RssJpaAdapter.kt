@@ -11,4 +11,11 @@ class RssJpaAdapter(
     override fun save(rss: Rss): Rss {
         return rssJpaRepository.save(RssEntity.toEntity(rss)).toDomain()
     }
+
+    override fun findActivatedRssList(): List<Rss> {
+        val rssEntities = rssJpaRepository.findAllByActivated(true)
+        return rssEntities
+            .map { rssEntity -> rssEntity.toDomain() }
+            .toList()
+    }
 }
