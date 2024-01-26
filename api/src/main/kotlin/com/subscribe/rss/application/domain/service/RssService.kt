@@ -5,9 +5,9 @@ import com.subscribe.rss.application.port.`in`.RssUseCase
 import com.subscribe.rss.application.port.`in`.request.RssCreateRequest
 import com.subscribe.rss.application.port.out.RssRepository
 import com.subscribe.rss.application.port.out.response.RssCreateResponse
+import com.subscribe.rss.application.port.out.response.RssLinkInfo
 import org.springframework.stereotype.Service
 import java.net.URI
-import java.net.URL
 
 @Service
 class RssService(
@@ -18,9 +18,9 @@ class RssService(
         return RssCreateResponse(save.id, save.uri, save.activated)
     }
 
-    override fun getFeeds(): List<URL> {
+    override fun getFeeds(): List<RssLinkInfo> {
         val rssList = rssRepository.findActivatedRssList()
-        return rssList.map { rss -> URI.create(rss.uri).toURL() }
+        return rssList.map { rss -> RssLinkInfo(rss.id, URI.create(rss.uri).toURL()) }
             .toList()
     }
 
