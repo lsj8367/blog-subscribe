@@ -4,7 +4,7 @@ import com.subscribe.common.core.BaseEntity
 import com.subscribe.rss.application.domain.model.Rss
 import jakarta.persistence.Entity
 
-@Entity
+@Entity(name = "rss")
 class RssEntity(
     var uri: String,
     var activated: Boolean

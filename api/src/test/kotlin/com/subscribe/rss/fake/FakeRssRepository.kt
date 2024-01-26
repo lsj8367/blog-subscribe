@@ -20,4 +20,9 @@ class FakeRssRepository : RssRepository {
         rssList.add(rss)
         return rss
     }
+
+    override fun findActivatedRssList(): List<Rss> {
+        return rssList.filter { rss -> rss.activated }
+            .toList()
+    }
 }

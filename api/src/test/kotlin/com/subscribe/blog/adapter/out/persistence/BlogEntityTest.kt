@@ -9,7 +9,7 @@ class BlogEntityTest {
     @Test
     fun `엔티티를_만든다`() {
         //when
-        val entity = BlogEntity.toEntity(Blog(1L, "제목", "내용", "https://lsj8367.tistory.com"))
+         val entity = BlogEntity.toEntity(Blog(1L, "제목", "내용", "https://lsj8367.tistory.com", 1))
 
         //then
         assertThat(entity.id).isEqualTo(1L)
@@ -21,12 +21,12 @@ class BlogEntityTest {
     @Test
     fun `엔티티_를_도메인_으로_변환한다`() {
         //given
-        val blogEntity = BlogEntity(1L, "title", "description", "https://lsj8367.tistory.com")
+        val blogEntity = BlogEntity(1L, "title", "description", "https://lsj8367.tistory.com", 1)
 
         //when
         val blog = blogEntity.toDomain()
 
         //then
-        assertThat(blog).isEqualTo(Blog(1L, "title", "description", "https://lsj8367.tistory.com"))
+        assertThat(blog).isEqualTo(Blog(1L, "title", "description", "https://lsj8367.tistory.com", 1))
     }
 }
