@@ -5,7 +5,7 @@ import com.subscribe.rss.application.port.`in`.RssUseCase
 import com.subscribe.rss.application.port.`in`.request.RssCreateRequest
 import com.subscribe.rss.application.port.out.RssRepository
 import com.subscribe.rss.application.port.out.response.RssCreateResponse
-import com.subscribe.rss.application.port.out.response.RssLinkInfo
+import com.subscribe.rss.application.domain.model.RssLinkInfo
 import org.springframework.stereotype.Service
 import java.net.URI
 

@@ -3,7 +3,7 @@ package com.subscribe.rss.application.domain.service
 import com.subscribe.rss.application.domain.model.Rss
 import com.subscribe.rss.application.port.`in`.request.RssCreateRequest
 import com.subscribe.rss.application.port.out.response.RssCreateResponse
-import com.subscribe.rss.application.port.out.response.RssLinkInfo
+import com.subscribe.rss.application.domain.model.RssLinkInfo
 import com.subscribe.rss.fake.FakeRssRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
